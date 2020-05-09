@@ -15,6 +15,7 @@ public class Main {
 				JLabel label = new JLabel("Hello World");
 				frame.getContentPane().add(label);
 				frame.pack();
+				frame.setLocationRelativeTo(null);
 				frame.setVisible(true);
 			}
 		});
