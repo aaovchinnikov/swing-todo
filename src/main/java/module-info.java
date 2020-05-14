@@ -1,5 +1,6 @@
 module swing {
+	exports ru.hse.todo.swing.controls;
 	exports ru.hse.todo.swing;
 
-	requires java.desktop;
+	requires transitive java.desktop;
 }
