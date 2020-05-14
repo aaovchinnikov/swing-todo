@@ -24,49 +24,13 @@ public final class MainWindow {
 
 	public MainWindow() {
 		this.jFrame = new JFrame();
-		GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWidths = new int[]{0, 0, 0};
-		gridBagLayout.rowHeights = new int[]{0, 0};
-		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
+		
+		final GridBagLayout gridBagLayout = new GridBagLayout();
+//		gridBagLayout.columnWidths = new int[]{0, 0};
+//		gridBagLayout.rowHeights = new int[]{0, 0};
+//		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
+//		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
 		jFrame.getContentPane().setLayout(gridBagLayout);
-		
-		JPanel panel = new JPanel();
-		GridBagConstraints gbc_panel = new GridBagConstraints();
-		gbc_panel.insets = new Insets(0, 0, 0, 5);
-		gbc_panel.fill = GridBagConstraints.BOTH;
-		gbc_panel.gridx = 0;
-		gbc_panel.gridy = 0;
-		jFrame.getContentPane().add(panel, gbc_panel);
-		GridBagLayout gbl_panel = new GridBagLayout();
-		gbl_panel.columnWidths = new int[]{0, 0, 0};
-		gbl_panel.rowHeights = new int[]{0, 0, 0};
-		gbl_panel.columnWeights = new double[]{1.0, 1.0, Double.MIN_VALUE};
-		gbl_panel.rowWeights = new double[]{1.0, 0.0, Double.MIN_VALUE};
-		panel.setLayout(gbl_panel);
-		
-		JList list = new JList();
-		GridBagConstraints gbc_list = new GridBagConstraints();
-		gbc_list.gridwidth = 2;
-		gbc_list.insets = new Insets(0, 0, 5, 0);
-		gbc_list.fill = GridBagConstraints.BOTH;
-		gbc_list.gridx = 0;
-		gbc_list.gridy = 0;
-		panel.add(list, gbc_list);
-		
-		JPanel panel_2 = new JPanel();
-		GridBagConstraints gbc_panel_2 = new GridBagConstraints();
-		gbc_panel_2.fill = GridBagConstraints.HORIZONTAL;
-		gbc_panel_2.gridx = 0;
-		gbc_panel_2.gridy = 1;
-		panel.add(panel_2, gbc_panel_2);
-		
-		JButton btnNewButton = new JButton("Add");
-		panel_2.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Remove");
-		panel_2.add(btnNewButton_1);
-		btnNewButton_1.setEnabled(false);
 		
 		JPanel panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -153,6 +117,9 @@ public final class MainWindow {
 	}
 	
 	public void show() {
+//		final GridBagLayout gridBagLayout = new GridBagLayout();
+//		jFrame.getContentPane().setLayout(gridBagLayout);
+		
 		this.jFrame.setTitle("TODO App");
 		this.jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.jFrame.setMinimumSize(new Dimension(320, 270));
