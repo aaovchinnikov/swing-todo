@@ -3,6 +3,7 @@ package ru.hse.todo.swing.listeners;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
+import ru.hse.todo.swing.controls.MainPane;
 import ru.hse.todo.swing.controls.MainWindow;
 
 public final class ToggleField implements ActionListener {
@@ -20,6 +21,6 @@ public final class ToggleField implements ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		this.window.rebuildUI(! this.enabled);
+		this.window.rebuildUI(new MainPane(!this.enabled, this.window));
 	}
 }
