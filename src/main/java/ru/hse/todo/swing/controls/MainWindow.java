@@ -40,7 +40,6 @@ public final class MainWindow {
 		button.addActionListener(new ToggleField(this, fieldEnabled));
 		final JTextField field = new JTextField();
 		field.setEnabled(fieldEnabled);
-		// FIXME Temporal coupling
 		final JPanel panel = new JPanel();
 		panel.setLayout(this.gbl);
 		panel.add(field, this.gbc);
