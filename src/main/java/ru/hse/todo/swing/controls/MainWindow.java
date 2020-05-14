@@ -6,71 +6,46 @@ import java.awt.GridBagLayout;
 
 import javax.swing.JButton;
 import javax.swing.JFrame;
+import javax.swing.JPanel;
 import javax.swing.JTextField;
-import javax.swing.event.DocumentEvent;
-import javax.swing.event.DocumentListener;
-import javax.swing.text.BadLocationException;
-import javax.swing.text.Document;
+
+import ru.hse.todo.swing.listeners.ToggleField;
 
 public final class MainWindow {
 	private final JFrame jFrame;
-	private final JTextField field;
-	private final JButton button;
+	private final GridBagLayout gbl;
+	private final GridBagConstraints gbc;
 
 	public MainWindow() {
+		this.gbl = new GridBagLayout();
+		this.gbl.columnWeights = new double[]{1.0};
+		this.gbl.rowWeights = new double[]{1.0};
+		this.gbc = new GridBagConstraints();
+		this.gbc.fill = GridBagConstraints.BOTH;
 		this.jFrame = new JFrame();
-		this.field = new JTextField();
-		this.button = new JButton();
-	}
-	
-	public void show() {
-		button.setEnabled(false);
-		this.field.getDocument().addDocumentListener(new DocumentListener() {
-		    @Override
-		    public void insertUpdate(DocumentEvent e) {
-		     	try {
-		     		final Document document = e.getDocument();
-					System.out.println(document.getText(0, document.getLength()));
-				} catch (BadLocationException e1) {
-					e1.printStackTrace();
-				}
-		    }
-
-		    @Override
-		    public void removeUpdate(DocumentEvent e) {
-		     	try {
-		     		final Document document = e.getDocument();
-					System.out.println(document.getText(0, document.getLength()));
-				} catch (BadLocationException e1) {
-					e1.printStackTrace();
-				}
-		    }
-
-		    @Override
-		    public void changedUpdate(DocumentEvent e) {
-		     	try {
-		     		final Document document = e.getDocument();
-					System.out.println(document.getText(0, document.getLength()));
-				} catch (BadLocationException e1) {
-					e1.printStackTrace();
-				}
-		    }
-		});
-		
-		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
-		gbc_panel_1.fill = GridBagConstraints.BOTH;
-		final GridBagLayout gridBagLayout = new GridBagLayout();
-		gridBagLayout.columnWeights = new double[]{1.0};
-		gridBagLayout.rowWeights = new double[]{1.0};
-		this.jFrame.getContentPane().setLayout(gridBagLayout);
-		// FIXME Temporal coupling
-		this.jFrame.getContentPane().add(this.field, gbc_panel_1);
 		this.jFrame.setTitle("TODO App");
 		this.jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.jFrame.setMinimumSize(new Dimension(320, 270));
 		this.jFrame.pack();
 		this.jFrame.setLocationRelativeTo(null);
-		
+	}
+	
+	public void show() {
+		rebuildUI(false);
 		this.jFrame.setVisible(true);
+	}
+	
+	public void rebuildUI(boolean fieldEnabled) {
+		final JButton button = new JButton();
+		button.addActionListener(new ToggleField(this, fieldEnabled));
+		final JTextField field = new JTextField();
+		field.setEnabled(fieldEnabled);
+		// FIXME Temporal coupling
+		final JPanel panel = new JPanel();
+		panel.setLayout(this.gbl);
+		panel.add(field, this.gbc);
+		panel.add(button, this.gbc);
+		this.jFrame.setContentPane(panel);
+		this.jFrame.validate();
 	}
 }
