@@ -8,28 +8,26 @@ import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
-import ru.hse.todo.swing.listeners.ToggleField;
+import ru.hse.todo.swing.listeners.OpenLabeledPane;
 
 public final class MainPane implements ContentPane {
 	private final JPanel panel;
 	private final GridBagLayout gbl;
 	private final GridBagConstraints gbc;
 	private final boolean enabled;
-	private final MainWindow window;
 
 	/**
 	 * @param enabled
 	 */
 	public MainPane(boolean enabled, MainWindow window) {
 		this.enabled = enabled;
-		this.window = window;
 		this.gbl = new GridBagLayout();
 		this.gbl.columnWeights = new double[]{1.0};
 		this.gbl.rowWeights = new double[]{1.0};
 		this.gbc = new GridBagConstraints();
 		this.gbc.fill = GridBagConstraints.BOTH;
 		final JButton button = new JButton();
-		button.addActionListener(new ToggleField(this.window, this.enabled));
+		button.addActionListener(new OpenLabeledPane(window));
 		final JTextField field = new JTextField();
 		field.setEnabled(this.enabled);
 		this.panel = new JPanel();
