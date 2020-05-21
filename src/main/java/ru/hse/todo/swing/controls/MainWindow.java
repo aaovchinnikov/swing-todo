@@ -24,6 +24,10 @@ public final class MainWindow {
 
 	public MainWindow() {
 		this.jFrame = new JFrame();
+		this.jFrame.setTitle("TODO App");
+		this.jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		this.jFrame.setMinimumSize(new Dimension(320, 270));
+		this.jFrame.setLocationRelativeTo(null);
 		
 		final GridBagLayout gridBagLayout = new GridBagLayout();
 //		gridBagLayout.columnWidths = new int[]{0, 0};
@@ -117,14 +121,13 @@ public final class MainWindow {
 	}
 	
 	public void show() {
-//		final GridBagLayout gridBagLayout = new GridBagLayout();
-//		jFrame.getContentPane().setLayout(gridBagLayout);
-		
-		this.jFrame.setTitle("TODO App");
-		this.jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		this.jFrame.setMinimumSize(new Dimension(320, 270));
+		rebuildUI(new MainPane(false, this));
 		this.jFrame.pack();
-		this.jFrame.setLocationRelativeTo(null);
 		this.jFrame.setVisible(true);
+	}
+	
+	public void rebuildUI(ContentPane pane) {
+		pane.bind(this.jFrame);
+		this.jFrame.validate();
 	}
 }
