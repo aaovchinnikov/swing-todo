@@ -16,6 +16,14 @@ public final class MainPane implements ContentPane {
 	private final GridBagConstraints gbc;
 	private final boolean enabled;
 
+	// Seems to be secure, because all fields are final
+	private MainPane(MainPane pane) {
+		this.panel = pane.panel;
+		this.gbl = pane.gbl;
+		this.gbc = pane.gbc;
+		this.enabled = pane.enabled;
+	}
+	
 	/**
 	 * @param enabled
 	 */
@@ -39,5 +47,14 @@ public final class MainPane implements ContentPane {
 	@Override
 	public void bind(JFrame parent) {
 		parent.setContentPane(this.panel);
+	}
+	
+	public void tmp() {
+		
+	}
+	
+	protected MainPane clone() {
+		
+		return null;
 	}
 }
