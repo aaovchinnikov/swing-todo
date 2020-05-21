@@ -14,7 +14,7 @@ public final class SwingTextField implements SwingControl {
 	};
 
 	public SwingTextField() {
-		this.field = new JTextField();
+		this(new JTextField());
 	}
 
 	@Override

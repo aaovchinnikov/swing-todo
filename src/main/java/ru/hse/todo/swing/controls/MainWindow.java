@@ -9,6 +9,8 @@ import java.util.Map;
 
 import javax.swing.JFrame;
 
+import ru.hse.todo.swing.listeners.EditActionListener;
+
 public final class MainWindow {
 	private final JFrame jFrame;
 
@@ -92,7 +94,21 @@ public final class MainWindow {
 							i0_0_5_0,
 							1, 1
 						)
-					)					
+					),
+					new AbstractMap.SimpleEntry<SwingControl, Object>(
+						new SwingButton(
+							"Edit",
+							new EditActionListener()
+						),
+						new GridBagConstraints(
+							0, 3,
+							1, 1,
+							0, 0,
+							GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
+							i0_0_5_5,
+							1, 1
+						)
+					)
 				)
 			)
 		);

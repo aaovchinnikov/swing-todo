@@ -12,27 +12,29 @@ import javax.swing.JPanel;
  */
 public final class SwingLabel implements SwingControl {
 	private final JLabel label;
+	private final String text;
 
 	/**
 	 * Private constructor to be used in {@link #withParent(JPanel)} method
 	 * 
 	 * @param label
 	 */
-	private SwingLabel(JLabel label) {
+	private SwingLabel(JLabel label, String text) {
 		this.label = label;
+		this.text = text;
 	}
 
 	/**
 	 * @param label
 	 */
 	public SwingLabel(String text) {
-		this.label = new JLabel(text);
+		this(new JLabel(text), text);
 	}
 
 	@Override
 	public SwingLabel withParent(JPanel parent, Object constraints) {
-		final JLabel jLabel = new JLabel(this.label.getText());
+		final JLabel jLabel = new JLabel(this.text);
 		parent.add(jLabel, constraints);
-		return new SwingLabel(jLabel);
+		return new SwingLabel(jLabel, this.text);
 	}
 }

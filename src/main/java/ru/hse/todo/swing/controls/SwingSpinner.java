@@ -20,15 +20,12 @@ public final class SwingSpinner implements SwingControl{
 	}
 
 	public SwingSpinner() {
-		this.spinner = new JSpinner(
-			new SpinnerDateModel()
+		this(
+			new JSpinner(
+				new SpinnerDateModel()
+			)
 		);
-//		JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(this.spinner, "HH:mm:ss");
-		final JSpinner.DateEditor timeEditor = new JSpinner.DateEditor(this.spinner);
-		this.spinner.setEditor(timeEditor);
-		this.spinner.setValue(new Date()); // will only show the current time
 	}
-
 
 	@Override
 	public SwingSpinner withParent(JPanel parent, Object constraints) {
