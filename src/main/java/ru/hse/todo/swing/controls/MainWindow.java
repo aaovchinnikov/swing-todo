@@ -37,7 +37,7 @@ public final class MainWindow {
 							0, 0,
 							1, 1,
 							0, 0,
-							GridBagConstraints.EAST, GridBagConstraints.CENTER,
+							GridBagConstraints.LINE_END, GridBagConstraints.CENTER,
 							i0_0_5_5,
 							1, 1
 						)
@@ -48,7 +48,7 @@ public final class MainWindow {
 							1, 0,
 							1, 1,
 							1, 0,
-							GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
+							GridBagConstraints.LINE_END, GridBagConstraints.HORIZONTAL,
 							i0_0_5_0,
 							1, 1
 						)
@@ -59,7 +59,7 @@ public final class MainWindow {
 							0, 1,
 							1, 1,
 							0, 0,
-							GridBagConstraints.EAST, GridBagConstraints.CENTER,
+							GridBagConstraints.LINE_END, GridBagConstraints.CENTER,
 							i0_0_5_5,
 							1, 1
 						)
@@ -70,7 +70,7 @@ public final class MainWindow {
 							1, 1,
 							1, 1,
 							1, 0,
-							GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
+							GridBagConstraints.LINE_END, GridBagConstraints.HORIZONTAL,
 							i0_0_5_0,
 							1, 1
 						)
@@ -81,7 +81,7 @@ public final class MainWindow {
 							0, 2,
 							1, 1,
 							0, 0,
-							GridBagConstraints.EAST, GridBagConstraints.CENTER,
+							GridBagConstraints.LINE_END, GridBagConstraints.CENTER,
 							i0_0_5_5,
 							1, 1
 						)
@@ -92,7 +92,7 @@ public final class MainWindow {
 							1, 2,
 							1, 1,
 							1, 0,
-							GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
+							GridBagConstraints.LINE_END, GridBagConstraints.HORIZONTAL,
 							i0_0_5_0,
 							1, 1
 						)
@@ -106,7 +106,7 @@ public final class MainWindow {
 							0, 3,
 							1, 1,
 							0, 1,
-							GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
+							GridBagConstraints.FIRST_LINE_END, GridBagConstraints.HORIZONTAL,
 							i0_0_5_5,
 							1, 1
 						)
