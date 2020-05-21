@@ -28,13 +28,7 @@ public final class MainWindow {
 		this.jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		this.jFrame.setMinimumSize(new Dimension(320, 270));
 		this.jFrame.setLocationRelativeTo(null);
-		
-		final GridBagLayout gridBagLayout = new GridBagLayout();
-//		gridBagLayout.columnWidths = new int[]{0, 0};
-//		gridBagLayout.rowHeights = new int[]{0, 0};
-//		gridBagLayout.columnWeights = new double[]{0.0, 1.0, Double.MIN_VALUE};
-//		gridBagLayout.rowWeights = new double[]{1.0, Double.MIN_VALUE};
-		jFrame.getContentPane().setLayout(gridBagLayout);
+		this.jFrame.getContentPane().setLayout(new GridBagLayout());
 		
 		JPanel panel_1 = new JPanel();
 		GridBagConstraints gbc_panel_1 = new GridBagConstraints();
@@ -121,7 +115,7 @@ public final class MainWindow {
 	}
 	
 	public void show() {
-		rebuildUI(new MainPane(false, this));
+//		rebuildUI(new MainPane(false, this));
 		this.jFrame.pack();
 		this.jFrame.setVisible(true);
 	}
