@@ -7,6 +7,7 @@ import java.awt.Insets;
 import java.util.AbstractMap;
 import java.util.Map;
 
+import javax.swing.BorderFactory;
 import javax.swing.JFrame;
 
 import ru.hse.todo.swing.listeners.EditActionListener;
@@ -27,6 +28,7 @@ public final class MainWindow {
 		final Insets i0_0_5_0 = new Insets(0, 0, 5, 0);
 		rebuildUI(
 			new SwingPanel(
+				BorderFactory.createTitledBorder("TODO details"),
 				new GridBagLayout(),
 				Map.ofEntries(
 					new AbstractMap.SimpleEntry<SwingControl, Object>(
@@ -103,7 +105,7 @@ public final class MainWindow {
 						new GridBagConstraints(
 							0, 3,
 							1, 1,
-							0, 0,
+							0, 1,
 							GridBagConstraints.EAST, GridBagConstraints.HORIZONTAL,
 							i0_0_5_5,
 							1, 1
